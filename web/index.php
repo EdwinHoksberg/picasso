@@ -23,7 +23,7 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => ROOT_DIR.'App/Views',
     'twig.options' => [
-        'cache' => (getenv('APP_DEBUG') === 'true') ? false : ROOT_DIR.'storage/twig',
+        'cache' => $app['debug'] ? false : ROOT_DIR.'storage/twig',
     ],
 ]);
 
@@ -38,7 +38,7 @@ $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 
-if (getenv('APP_DEBUG') === 'true') {
+if ($app['debug']) {
     $app->register(new \Silex\Provider\WebProfilerServiceProvider(), [
         'profiler.cache_dir' => ROOT_DIR.'storage/profiler',
     ]);
