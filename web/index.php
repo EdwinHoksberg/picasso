@@ -29,6 +29,8 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.version' => getenv('APP_VERSION'),
 ));
 
+$app->register(new Silex\Provider\VarDumperServiceProvider());
+
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver'    => getenv('DB_DRIVER'),
