@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6be2ee1ab99a6c0477e01bf53a2dee05",
-    "content-hash": "9818760ccfb7b9fae7b063f7ca50244c",
+    "hash": "969a4aeb38fe9400af4100aaeae0eef0",
+    "content-hash": "1a358fc056c0e5b83e2f1c402aa160b4",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1124,20 +1124,21 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.31.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7"
+                "reference": "9062992538bc5855a683c6737257bfa18d25a4b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
-                "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9062992538bc5855a683c6737257bfa18d25a4b8",
+                "reference": "9062992538bc5855a683c6737257bfa18d25a4b8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.7"
+                "php": "^7.0",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "symfony/debug": "~2.7",
@@ -1146,7 +1147,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.31-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -1181,7 +1182,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-01-11 19:36:15"
+            "time": "2017-01-11 19:39:01"
         },
         {
             "name": "vlucas/phpdotenv",
