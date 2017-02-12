@@ -18,8 +18,6 @@ $dotenv->load();
 $app = new App\Application();
 $app['debug'] = (getenv('APP_DEBUG') === 'true');
 
-$app->register(new Silex\Provider\RoutingServiceProvider());
-
 $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), [
