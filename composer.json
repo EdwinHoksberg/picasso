@@ -4,7 +4,7 @@
     },
     "require": {
         "silex/silex": "~2.0",
-        "symfony/twig-bridge": "~2.3",
+        "symfony/twig-bridge": "~3.2",
         "doctrine/dbal": "~2.2",
         "twig/twig": "~2.1",
         "vlucas/phpdotenv": "^2.4"
