@@ -40,7 +40,7 @@ $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 
 if (getenv('APP_DEBUG') === 'true') {
     $app->register(new \Silex\Provider\WebProfilerServiceProvider(), [
-        'profiler.cache_dir' => '/tmp',
+        'profiler.cache_dir' => ROOT_DIR.'storage/profiler',
     ]);
 
     $app->register(new Sorien\Provider\DoctrineProfilerServiceProvider());
