@@ -20,14 +20,14 @@ $app['debug'] = (getenv('APP_DEBUG') === 'true');
 
 $app->register(new Silex\Provider\RoutingServiceProvider());
 
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
+$app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => ROOT_DIR.'App/Views',
-));
+]);
 
-$app->register(new Silex\Provider\AssetServiceProvider(), array(
+$app->register(new Silex\Provider\AssetServiceProvider(), [
     'assets.version_format' => '%s?v=%s',
     'assets.version' => getenv('APP_VERSION'),
-));
+]);
 
 $app->register(new Silex\Provider\VarDumperServiceProvider());
 
@@ -36,15 +36,15 @@ $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 
 if (getenv('APP_DEBUG') === 'true') {
-    $app->register(new \Silex\Provider\WebProfilerServiceProvider(), array(
+    $app->register(new \Silex\Provider\WebProfilerServiceProvider(), [
         'profiler.cache_dir' => '/tmp',
-    ));
+    ]);
 
     $app->register(new Sorien\Provider\DoctrineProfilerServiceProvider());
 }
 
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array(
+$app->register(new Silex\Provider\DoctrineServiceProvider(), [
+    'db.options' => [
         'driver'    => getenv('DB_DRIVER'),
         'charset'   => getenv('DB_CHARSET'),
         'host'      => getenv('DB_HOST'),
@@ -52,8 +52,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'dbname'    => getenv('DB_DATABASE'),
         'user'      => getenv('DB_USERNAME'),
         'password'  => getenv('DB_PASSWORD'),
-    ),
-));
+    ],
+]);
 
 require ROOT_DIR.'App/routes.php';
 
