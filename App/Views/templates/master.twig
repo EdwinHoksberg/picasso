@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <title>Silex base</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ app.request.schemeAndHttpHost }}/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ global.request.schemeAndHttpHost }}/css/app.css">
 </head>
 <body>
 
 {% block body %}{% endblock %}
 
-<script type="text/javascript" src="{{ app.request.schemeAndHttpHost }}/js/app.js"></script>
+<script type="text/javascript" src="{{ global.request.schemeAndHttpHost }}/js/app.js"></script>
 </body>
 </html>

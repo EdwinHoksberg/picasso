@@ -18,7 +18,7 @@ $dotenv->load();
 $app = new App\Application();
 $app['debug'] = (getenv('APP_DEBUG') === 'true');
 
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\RoutingServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => ROOT_DIR.'App/Views',
