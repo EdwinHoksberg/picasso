@@ -1,5 +1,6 @@
 /web/css/*
 /web/js/*
 /.env
+/storage/*
 
 !.gitkeep

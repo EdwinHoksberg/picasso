@@ -22,6 +22,9 @@ $app->register(new Silex\Provider\RoutingServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => ROOT_DIR.'App/Views',
+    'twig.options' => [
+        'cache' => (getenv('APP_DEBUG') === 'true') ? false : ROOT_DIR.'storage/twig',
+    ],
 ]);
 
 $app->register(new Silex\Provider\AssetServiceProvider(), [
