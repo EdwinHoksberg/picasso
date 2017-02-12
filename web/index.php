@@ -46,6 +46,8 @@ if (getenv('APP_DEBUG') === 'true') {
     ]);
 
     $app->register(new Sorien\Provider\DoctrineProfilerServiceProvider());
+
+    $app->register(new \WhoopsSilex\WhoopsServiceProvider());
 }
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [

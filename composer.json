@@ -11,6 +11,7 @@
         "symfony/asset": "^3.2",
         "symfony/var-dumper": "^3.2",
         "silex/web-profiler": "^2.0",
-        "sorien/silex-dbal-profiler": "~2.0"
+        "sorien/silex-dbal-profiler": "~2.0",
+        "texthtml/whoops-silex": "~1.0"
     }
 }

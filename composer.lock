@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9b5aeedf8683acc48c68a5a4cf3f917",
+    "content-hash": "5f2d765ee34b20840699b7d9e0199fa2",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -475,6 +475,66 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "filp/whoops",
+            "version": "2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "2abce9d956589122c6443d6265f01cf7e9388e3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/2abce9d956589122c6443d6265f01cf7e9388e3c",
+                "reference": "2abce9d956589122c6443d6265f01cf7e9388e3c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "^4.8 || ^5.0",
+                "symfony/var-dumper": "^2.6 || ^3.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
+                "whoops/soap": "Formats errors as SOAP responses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whoops\\": "src/Whoops/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://filp.github.io/whoops/",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "whoops",
+                "zf2"
+            ],
+            "time": "2016-12-26T16:13:31+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1563,6 +1623,96 @@
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
             "time": "2017-01-17T08:49:30+00:00"
+        },
+        {
+            "name": "texthtml/whoops-pimple",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/texthtml/whoops-pimple.git",
+                "reference": "bb31b1ca8f73a0e8e41ccb14e1fe599f0a0fc86b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/texthtml/whoops-pimple/zipball/bb31b1ca8f73a0e8e41ccb14e1fe599f0a0fc86b",
+                "reference": "bb31b1ca8f73a0e8e41ccb14e1fe599f0a0fc86b",
+                "shasum": ""
+            },
+            "require": {
+                "filp/whoops": "^2.0",
+                "pimple/pimple": "^3.0",
+                "symfony/http-kernel": "^2.0|^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WhoopsPimple\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mathieu Rochette",
+                    "email": "mathieu@rochette.cc",
+                    "homepage": "https://mathieu.rochette.cc"
+                }
+            ],
+            "description": "Integrates the Whoops library into Pimple",
+            "keywords": [
+                "error",
+                "exception",
+                "pimple",
+                "silex",
+                "whoops"
+            ],
+            "time": "2016-02-29T12:46:39+00:00"
+        },
+        {
+            "name": "texthtml/whoops-silex",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/texthtml/whoops-silex.git",
+                "reference": "bc4797ba761db398c9f1f532dd00d9487aa46dc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/texthtml/whoops-silex/zipball/bc4797ba761db398c9f1f532dd00d9487aa46dc3",
+                "reference": "bc4797ba761db398c9f1f532dd00d9487aa46dc3",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~2.0@dev",
+                "texthtml/whoops-pimple": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WhoopsSilex\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mathieu Rochette",
+                    "email": "mathieu@rochette.cc",
+                    "homepage": "https://mathieu.rochette.cc"
+                }
+            ],
+            "description": "Integrates the Whoops library into Silex",
+            "keywords": [
+                "error",
+                "exception",
+                "silex",
+                "whoops"
+            ],
+            "time": "2015-04-09T08:49:20+00:00"
         },
         {
             "name": "twig/twig",
