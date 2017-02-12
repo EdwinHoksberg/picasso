@@ -2,7 +2,7 @@
 
 define('ROOT_DIR', __DIR__.'/../');
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once ROOT_DIR.'vendor/autoload.php';
 
 // Make php development server compatible
 if (php_sapi_name() === 'cli-server') {
@@ -21,7 +21,7 @@ $app['debug'] = (getenv('APP_DEBUG') === 'true');
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../App/Views',
+    'twig.path' => ROOT_DIR.'App/Views',
 ));
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
@@ -36,6 +36,6 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     ),
 ));
 
-require __DIR__.'/../App/routes.php';
+require ROOT_DIR.'App/routes.php';
 
 $app->run();
