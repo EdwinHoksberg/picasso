@@ -20,6 +20,8 @@ $app['debug'] = (getenv('APP_DEBUG') === 'true');
 
 $app->register(new Silex\Provider\RoutingServiceProvider());
 
+$app->register(new Silex\Provider\SessionServiceProvider());
+
 $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => ROOT_DIR.'App/Views',
     'twig.options' => [
@@ -57,6 +59,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
         'password'  => getenv('DB_PASSWORD'),
     ],
 ]);
+
+require ROOT_DIR.'App/middleware.php';
 
 require ROOT_DIR.'App/routes.php';
 
