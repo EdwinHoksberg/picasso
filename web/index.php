@@ -26,7 +26,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.version_format' => '%s?v=%s',
-    'assets.version' => '1',
+    'assets.version' => getenv('APP_VERSION'),
 ));
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
