@@ -1,5 +1,7 @@
 <?php
 
+define('ROOT_DIR', __DIR__.'/../');
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 // Make php development server compatible
@@ -10,8 +12,11 @@ if (php_sapi_name() === 'cli-server') {
     }
 }
 
+$dotenv = new \Dotenv\Dotenv(ROOT_DIR);
+$dotenv->load();
+
 $app = new App\Application();
-$app['debug'] = true;
+$app['debug'] = (getenv('APP_DEBUG') === 'true');
 
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
@@ -21,12 +26,13 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
-        'driver'    => 'pdo_mysql',
-        'host'      => 'localhost',
-        'dbname'    => '',
-        'user'      => 'root',
-        'password'  => 'toor',
-        'charset'   => 'utf8mb4',
+        'driver'    => getenv('DB_DRIVER'),
+        'charset'   => getenv('DB_CHARSET'),
+        'host'      => getenv('DB_HOST'),
+        'port'      => getenv('DB_PORT'),
+        'dbname'    => getenv('DB_DATABASE'),
+        'user'      => getenv('DB_USERNAME'),
+        'password'  => getenv('DB_PASSWORD'),
     ),
 ));
 

@@ -6,6 +6,7 @@
         "silex/silex": "~1.1",
         "symfony/twig-bridge": "~2.3",
         "doctrine/dbal": "~2.2",
-        "twig/twig": "^1.24"
+        "twig/twig": "^1.24",
+        "vlucas/phpdotenv": "^2.4"
     }
 }
