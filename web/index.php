@@ -31,6 +31,14 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
 
 $app->register(new Silex\Provider\VarDumperServiceProvider());
 
+$app->register(new Silex\Provider\ServiceControllerServiceProvider());
+
+$app->register(new Silex\Provider\HttpFragmentServiceProvider());
+
+$app->register(new \Silex\Provider\WebProfilerServiceProvider(), array(
+    'profiler.cache_dir' => '/tmp',
+));
+
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver'    => getenv('DB_DRIVER'),
