@@ -39,6 +39,8 @@ if (getenv('APP_DEBUG') === 'true') {
     $app->register(new \Silex\Provider\WebProfilerServiceProvider(), array(
         'profiler.cache_dir' => '/tmp',
     ));
+
+    $app->register(new Sorien\Provider\DoctrineProfilerServiceProvider());
 }
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
