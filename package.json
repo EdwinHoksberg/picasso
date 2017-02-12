@@ -4,16 +4,16 @@
   "author": "Edwin Hoksberg",
   "description": "Silex framework with some additional components",
   "dependencies": {
-    "bootstrap-sass": "~3.3.7",
-    "jquery": "^3.1.0"
+    "bootstrap-sass": "~3.3",
+    "jquery": "~3.1"
   },
   "devDependencies": {
     "gulp": "~3.9.1",
-    "gulp-concat": "~2.6.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-sass": "~2.3.2",
-    "gulp-sourcemaps": "~1.6.0",
-    "gulp-uglify": "~1.5.4",
-    "yargs": "~4.8.1"
+    "gulp-concat": "~2.6",
+    "gulp-notify": "~3.0",
+    "gulp-sass": "~3.1",
+    "gulp-sourcemaps": "~2.4",
+    "gulp-uglify": "~2.0",
+    "yargs": "~6.6"
   }
 }
