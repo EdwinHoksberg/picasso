@@ -2,11 +2,11 @@
 
 namespace App;
 
-use Silex\Application;
+use Silex\Application as SilexApplication;
 use Silex\Application\TwigTrait;
 use Silex\Application\UrlGeneratorTrait;
 
-class SilexApplication extends Application
+class Application extends SilexApplication
 {
     use TwigTrait;
     use UrlGeneratorTrait;

@@ -10,7 +10,7 @@ if (php_sapi_name() === 'cli-server') {
     }
 }
 
-$app = new App\SilexApplication();
+$app = new App\Application();
 $app['debug'] = true;
 
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
