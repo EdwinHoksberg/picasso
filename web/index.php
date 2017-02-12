@@ -24,6 +24,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => ROOT_DIR.'App/Views',
 ));
 
+$app->register(new Silex\Provider\AssetServiceProvider(), array(
+    'assets.version_format' => '%s?v=%s',
+    'assets.version' => '1',
+));
+
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver'    => getenv('DB_DRIVER'),
