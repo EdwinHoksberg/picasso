@@ -11,13 +11,13 @@ class DoctrineProvider implements ProviderInterface
     {
         $app->register(new DoctrineServiceProvider(), [
             'db.options' => [
-                'driver'    => getenv('DB_DRIVER'),
-                'charset'   => getenv('DB_CHARSET'),
-                'host'      => getenv('DB_HOST'),
-                'port'      => getenv('DB_PORT'),
-                'dbname'    => getenv('DB_DATABASE'),
-                'user'      => getenv('DB_USERNAME'),
-                'password'  => getenv('DB_PASSWORD'),
+                'driver'    => env('DB_DRIVER'),
+                'charset'   => env('DB_CHARSET'),
+                'host'      => env('DB_HOST'),
+                'port'      => env('DB_PORT'),
+                'dbname'    => env('DB_DATABASE'),
+                'user'      => env('DB_USERNAME'),
+                'password'  => env('DB_PASSWORD'),
             ],
         ]);
     }

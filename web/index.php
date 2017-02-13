@@ -18,7 +18,7 @@ $dotenv = new \Dotenv\Dotenv(ROOT_DIR);
 $dotenv->load();
 
 $app = new App\Application();
-$app['debug'] = (getenv('APP_DEBUG') === 'true');
+$app['debug'] = env('APP_DEBUG', false);
 
 $providers = [
     Providers\SessionProvider::class,
