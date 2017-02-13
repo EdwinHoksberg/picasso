@@ -1,3 +1,3 @@
 <?php
 
-$app->get('/', 'App\\Controllers\\HomeController::index');
+$app->get('/', 'App\Controllers\HomeController::index');
