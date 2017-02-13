@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers;
+
 define('ROOT_DIR', dirname(__DIR__));
 
 require_once ROOT_DIR.'/vendor/autoload.php';
@@ -18,47 +20,22 @@ $dotenv->load();
 $app = new App\Application();
 $app['debug'] = (getenv('APP_DEBUG') === 'true');
 
-$app->register(new Silex\Provider\SessionServiceProvider());
+$providers = [
+    Providers\SessionProvider::class,
+    Providers\TwigProvider::class,
+    Providers\AssetProvider::class,
+    Providers\DoctrineProvider::class,
+    Providers\ServiceControllerProvider::class,
+    Providers\HttpFragmentProvider::class,
+    Providers\VarDumperProvider::class,
+    Providers\WebProfilerProvider::class,
+    Providers\DoctrineProfilerProvider::class,
+    Providers\WhoopsProvider::class,
+];
 
-$app->register(new Silex\Provider\TwigServiceProvider(), [
-    'twig.path' => ROOT_DIR.'/src/Views',
-    'twig.options' => [
-        'cache' => $app['debug'] ? false : ROOT_DIR.'/storage/twig',
-    ],
-]);
-
-$app->register(new Silex\Provider\AssetServiceProvider(), [
-    'assets.version_format' => '%s?v=%s',
-    'assets.version' => getenv('APP_VERSION'),
-]);
-
-$app->register(new Silex\Provider\VarDumperServiceProvider());
-
-$app->register(new Silex\Provider\ServiceControllerServiceProvider());
-
-$app->register(new Silex\Provider\HttpFragmentServiceProvider());
-
-if ($app['debug']) {
-    $app->register(new \Silex\Provider\WebProfilerServiceProvider(), [
-        'profiler.cache_dir' => ROOT_DIR.'/storage/profiler',
-    ]);
-
-    $app->register(new Sorien\Provider\DoctrineProfilerServiceProvider());
-
-    $app->register(new \WhoopsSilex\WhoopsServiceProvider());
+foreach ($providers as $provider) {
+    $provider::register($app);
 }
-
-$app->register(new Silex\Provider\DoctrineServiceProvider(), [
-    'db.options' => [
-        'driver'    => getenv('DB_DRIVER'),
-        'charset'   => getenv('DB_CHARSET'),
-        'host'      => getenv('DB_HOST'),
-        'port'      => getenv('DB_PORT'),
-        'dbname'    => getenv('DB_DATABASE'),
-        'user'      => getenv('DB_USERNAME'),
-        'password'  => getenv('DB_PASSWORD'),
-    ],
-]);
 
 require ROOT_DIR.'/src/middleware.php';
 
