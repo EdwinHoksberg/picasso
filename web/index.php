@@ -1,8 +1,8 @@
 <?php
 
-define('ROOT_DIR', __DIR__.'/../');
+define('ROOT_DIR', dirname(__DIR__));
 
-require_once ROOT_DIR.'vendor/autoload.php';
+require_once ROOT_DIR.'/vendor/autoload.php';
 
 // Make php development server compatible
 if (php_sapi_name() === 'cli-server') {
@@ -21,9 +21,9 @@ $app['debug'] = (getenv('APP_DEBUG') === 'true');
 $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), [
-    'twig.path' => ROOT_DIR.'App/Views',
+    'twig.path' => ROOT_DIR.'/src/Views',
     'twig.options' => [
-        'cache' => $app['debug'] ? false : ROOT_DIR.'storage/twig',
+        'cache' => $app['debug'] ? false : ROOT_DIR.'/storage/twig',
     ],
 ]);
 
@@ -40,7 +40,7 @@ $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 
 if ($app['debug']) {
     $app->register(new \Silex\Provider\WebProfilerServiceProvider(), [
-        'profiler.cache_dir' => ROOT_DIR.'storage/profiler',
+        'profiler.cache_dir' => ROOT_DIR.'/storage/profiler',
     ]);
 
     $app->register(new Sorien\Provider\DoctrineProfilerServiceProvider());
@@ -60,8 +60,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     ],
 ]);
 
-require ROOT_DIR.'App/middleware.php';
+require ROOT_DIR.'/src/middleware.php';
 
-require ROOT_DIR.'App/routes.php';
+require ROOT_DIR.'/src/routes.php';
 
 $app->run();
