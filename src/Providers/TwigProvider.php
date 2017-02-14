@@ -15,5 +15,13 @@ class TwigProvider implements ProviderInterface
                 'cache' => $app['debug'] ? false : ROOT_DIR.'/storage/twig',
             ],
         ]);
+
+        $app['twig'] = $app->extend('twig', function (\Twig_Environment $twig, Application $app) {
+            $twig->addFunction(new \Twig_Function('env', function ($name, $default = null) {
+                return env($name, $default);
+            }));
+
+            return $twig;
+        });
     }
 }
