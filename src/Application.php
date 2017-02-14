@@ -10,4 +10,6 @@ class Application extends SilexApplication
 {
     use TwigTrait;
     use UrlGeneratorTrait;
+
+    use Traits\ResourceRouteTrait;
 }
