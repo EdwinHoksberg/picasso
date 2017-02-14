@@ -7,6 +7,6 @@ php:
   - 7.1
   - nightly
 
-before_script: /usr/bin/cp -f .env.example .env
+before_script: cp -f .env.example .env
 install: composer install --dev
 script: ./vendor/bin/phpunit
