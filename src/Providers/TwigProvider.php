@@ -17,7 +17,7 @@ class TwigProvider implements ProviderInterface
         ]);
 
         $app['twig'] = $app->extend('twig', function (\Twig_Environment $twig, Application $app) {
-            $twig->addFunction(new \Twig_Function('env', function ($name, $default = null) {
+            $twig->addFunction(new \Twig_SimpleFunction('env', function ($name, $default = null) {
                 return env($name, $default);
             }));
 
