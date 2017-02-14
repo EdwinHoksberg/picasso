@@ -2,7 +2,9 @@
 
 use App\Providers;
 
-define('ROOT_DIR', dirname(__DIR__));
+if (!defined('ROOT_DIR')) {
+    define('ROOT_DIR', dirname(__DIR__));
+}
 
 require_once ROOT_DIR.'/vendor/autoload.php';
 
