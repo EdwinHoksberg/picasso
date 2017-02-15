@@ -12,6 +12,11 @@ matrix:
   allow_failures:
      - php: nightly
 
-before_script: cp -f .env.example .env
 install: composer install --dev
-script: ./vendor/bin/phpunit
+
+before_script: cp -f .env.example .env
+
+script:
+  - ./vendor/bin/phpcs --standard=PSR2 -s ./src
+  - ./vendor/bin/phpunit
+  - ./vendor/bin/parallel-lint --exclude vendor .
