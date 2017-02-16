@@ -18,7 +18,8 @@
         "symfony/var-dumper": "^3.2",
         "silex/web-profiler": "^2.0",
         "sorien/silex-dbal-profiler": "~2.0",
-        "texthtml/whoops-silex": "~1.0"
+        "texthtml/whoops-silex": "~1.0",
+        "dflydev/doctrine-orm-service-provider": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",
