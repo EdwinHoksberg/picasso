@@ -15,6 +15,7 @@ class DoctrineOrmProvider implements ProviderInterface
                 'mappings' => array(
                     [
                         'type' => 'annotation',
+                        'use_simple_annotation_reader' => false,
                         'namespace' => 'App\Entities',
                         'path' => ROOT_DIR.'/src/Entities/',
                     ],

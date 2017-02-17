@@ -2,7 +2,11 @@
 
 namespace App\Entities;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
+ * Product
+ *
  * @ORM\Entity
  * @ORM\Table(name="product")
  */
@@ -31,7 +35,7 @@ class Product
     private $description;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -39,7 +43,7 @@ class Product
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -47,7 +51,7 @@ class Product
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -55,7 +59,7 @@ class Product
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -63,7 +67,7 @@ class Product
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getPrice()
     {
@@ -71,7 +75,7 @@ class Product
     }
 
     /**
-     * @param mixed $price
+     * @param float $price
      */
     public function setPrice($price)
     {
@@ -79,7 +83,7 @@ class Product
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDescription()
     {
@@ -87,7 +91,7 @@ class Product
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
      */
     public function setDescription($description)
     {
