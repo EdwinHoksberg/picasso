@@ -27,6 +27,7 @@ $providers = [
     Providers\TwigProvider::class,
     Providers\AssetProvider::class,
     Providers\DoctrineProvider::class,
+    Providers\DoctrineOrmProvider::class,
     Providers\ServiceControllerProvider::class,
     Providers\HttpFragmentProvider::class,
     Providers\VarDumperProvider::class,
