@@ -2,16 +2,22 @@
 
 namespace App\Entities;
 
+use App\Traits\EntityCreatedAtTrait;
+use App\Traits\EntityUpdatedAtTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Product
  *
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Table(name="product")
  */
 class Product
 {
+    use EntityCreatedAtTrait,
+        EntityUpdatedAtTrait;
+
     /**
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\Id
