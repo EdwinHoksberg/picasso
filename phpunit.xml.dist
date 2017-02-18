@@ -17,6 +17,6 @@
     </testsuites>
 
     <php>
-        <const name="PHPUNIT_TESTSUITE" value="true"/>
+        <const name="APP_BOOTSTRAP" value="true"/>
     </php>
 </phpunit>

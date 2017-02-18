@@ -44,7 +44,7 @@ require ROOT_DIR.'/src/middleware.php';
 
 require ROOT_DIR.'/src/routes.php';
 
-if ($app['debug'] && defined('PHPUNIT_TESTSUITE')) {
+if (defined('APP_BOOTSTRAP')) {
     return $app;
 }
 

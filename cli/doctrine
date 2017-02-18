@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+
+define('APP_BOOTSTRAP', true);
+
+$app = require __DIR__.'/../web/index.php';
+
+ConsoleRunner::run(
+    ConsoleRunner::createHelperSet($app['orm.em'])
+);
