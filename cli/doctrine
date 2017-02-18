@@ -1,14 +1,18 @@
 #!/usr/bin/env php
 <?php
 
+// Require composer autoload
 require __DIR__.'/../vendor/autoload.php';
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
+// Define the APP_BOOTSTRAP constant so we get the app object, instead of running it immediately
 define('APP_BOOTSTRAP', true);
 
+// Require the bootstrap file
 $app = require __DIR__.'/../web/index.php';
 
+// Run the doctrine console tool
 ConsoleRunner::run(
     ConsoleRunner::createHelperSet($app['orm.em'])
 );
